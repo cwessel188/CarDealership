@@ -1,0 +1,51 @@
+﻿@{
+   // Layout = null;
+}
+<div ng-controller="SearchController as main">
+    <br />
+    <form>
+        Search by: <br/>
+        <label>
+            Model:
+            <input ng-model="searchterm" ng-change="main.searchmodels(searchterm)" debounce="700" />
+        </label>
+        <label>
+            Description:
+            <input ng-model="descterm" ng-change="main.searchdescription(descterm)" debounce="700" />
+        </label>
+    </form>
+    <div dir-paginate="car in main.searchresults | itemsPerPage: 3">
+        <strong>{{car.Model}}</strong> by {{car.Make}}<br />
+        {{car.BreifDescription}} <br />
+        <img src="{{car.ImgSrc}}" width="200" />
+        <button ng-click="main.clickToOpen(car)">Modal</button>
+    </div>
+    <hr /> 
+    @* for pagination directive *@
+    <dir-pagination-controls template-url="dirPagination.tpl.html"></dir-pagination-controls>
+
+    <br />
+    <hr />
+    <form>
+        Browse by: <br />
+        <label>
+            Makes:
+            <select ng-change="main.getcarmodels(make)" ng-model="make">
+                @* funciton to be executed when a make is selects *@
+                <option value="Tesla">Tesla</option>
+                <option value="RollsRoyce">RollsRoyce</option>
+            </select>
+        </label>
+        <label>
+            Models:
+            <select >
+                <option ng-repeat="car in main.models" value="car.Id">{{car.Model}}</option>
+                <option>{{main.make}}</option>
+            </select>
+        </label>
+    </form>
+
+    
+
+</div>
+

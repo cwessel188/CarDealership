@@ -1,0 +1,16 @@
+﻿
+This app uses Angular to create an interactive, async, single page app,
+with two pages.
+
+The home page features 
+a search that updates with each keydown
+a browse with cascading dropdowns
+
+the admin page features
+car create, edit, remove
+image uploading
+
+
+Neat stuff:
+print to js concole log when various js controller funtions are called
+revealing modular pattern in app and controller js files
