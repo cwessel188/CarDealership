@@ -14,3 +14,6 @@ image uploading
 Neat stuff:
 print to js concole log when various js controller funtions are called
 revealing modular pattern in app and controller js files
+
+
+ DATABASE INITIALIZER NEEDS TO EXTEND DROPCREATEDATABASEALWAYS
